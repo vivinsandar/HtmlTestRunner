@@ -16,13 +16,16 @@
                 <p class='attribute'><strong>Summary: </strong>Total: {{ header_info.status.total }}, Pass: {{ header_info.status.success }}{% if header_info.status.failure %}, Fail: {{ header_info.status.failure }}{% endif %}{% if header_info.status.error %}, Error: {{ header_info.status.error }}{% endif %}{% if header_info.status.skip %}, Skip: {{ header_info.status.skip }}{% endif %}</p>
             </div>
         </div>
-        
-        <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('cars')"> Pass</button>
-            <button class="btn" onclick="filterSelection('animals')"> Fail</button>
-            <button class="btn" onclick="filterSelection('fruits')"> Skip</button>
-            <button class="btn" onclick="filterSelection('colors')"> Error</button>
+         <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('cars')"> Pass</button>
+                    <button class="btn" onclick="filterSelection('animals')"> Fail</button>
+                    <button class="btn" onclick="filterSelection('fruits')"> Skip</button>
+                    <button class="btn" onclick="filterSelection('colors')"> Error</button>
+                </div>
+             </div>
         </div>
         {%- for test_case_name, tests_results in all_results.items() %}
         {%- if tests_results %}
